@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>physics</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}"/>
+    <script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-light">
+    <a class="navbar-brand" href="#">Physics</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html" th:href="@{/}">Home </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="mass.html" th:href="@{/mass}">Mass</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="register.html" th:href="@{/register}">Register</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    My Profile
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="profile.html" th:href="@{/profile}">Profile</a>
+                    <a class="dropdown-item" href="users.html" th:href="@{/users}">Users</a>
+
+
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" th:href="@{/login}">Login</a>
+            </li>
+        </ul>
+
+    </div>
+
+
+</nav>
+<div>
+    <img src="../static/images/solarSystem.jpg" th:src="@{/images/solarSystem.jpg}" class="responsive">
+
+</div>
+
+<!-- physics Content -->
+<div class="wrapper">
+    <div class = "box box1">
+        <p>m=F/g</p>
+        <dl>
+            <dt>
+            <dd>m = mass</dd>
+            <dd>g = gravity</dd>
+            <dd>F = force</dd>
+            </dt>
+        </dl>
+        <form novalidate>
+            <p>
+                <!-- mass equation -->
+                <label >
+                    <span>Force:</span>
+                    <input class="value" id="box6" type="number" oninput="calculate3()" />
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                <label id = "Mass">
+                    <span>Gravity:</span>
+                    <input class="value" id="box7" type="number" oninput="calculate3()" />
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                <label class="value" id= "gravity">
+                    <span>Mass:</span>
+                    <input class="value" id="result3" />
+                    <span class="error" aria-live="polite"></span>
+                </label>
+            </p>
+        </form>
+
+    </div>
+    <div class = "box box2">
+        <p>Mass is both a property of a physical body and a measure of its resistance to acceleration (a change in its state of motion) when a net force is applied. ... An object on the Moon would weigh less than it does on Earth because of the lower gravity, but it would still have the same mass.</p>
+    </div>
+
+</div>
+<div class="wrapper">
+    <div class = "box box1">
+        <p>m=p*v</p>
+        <dl>
+            <dt>
+            <dd>m = mass</dd>
+            <dd>p = density</dd>
+            <dd>v = volume</dd>
+            </dt>
+        </dl>
+        <form novalidate>
+            <p>
+                <!-- mass equation -->
+                <label >
+                    <span>Volume:</span>
+                    <input class="value" id="box8" type="number" oninput="calculate4()" />
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                <label>
+                    <span>Density:</span>
+                    <input class="value" id="box9" type="number" oninput="calculate4()" />
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                <label >
+                    <span>Mass:</span>
+                    <input class="value" id="result4" />
+                    <span class="error" aria-live="polite"></span>
+                </label>
+            </p>
+        </form>
+
+    </div>
+    <div class = "box box2">
+        <p>The density, or more precisely, the volumetric mass density, of a substance is its mass per unit volume. The symbol most often used for density is ρ (the lower case Greek letter rho), although the Latin letter D can also be used</p>
+    </div>
+
+</div>
+
+
+
+
+</body>
+</html>

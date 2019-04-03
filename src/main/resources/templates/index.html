@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>physics</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}"/>
+    <script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-light">
+    <a class="navbar-brand" href="#">Physics</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="mass.html" th:href="@{/mass}">Mass</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="register.html" th:href="@{/register}">Register</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   My Profile
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="profile.html" th:href="@{/profile}">Profile</a>
+                    <a class="dropdown-item" href="users.html" th:href="@{/users}">Users</a>
+
+
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" th:href="@{/login}">Login</a>
+            </li>
+        </ul>
+
+    </div>
+
+
+</nav>
+<div>
+    <img src="../static/images/solarSystem.jpg" th:src="@{/images/solarSystem.jpg}" class="responsive">
+
+</div>
+
+<!-- physics Content -->
+<div class="wrapper">
+    <div class = "box box1">
+        <p>Gravity is the concept which all things with mass are dawn together </p>
+        <p>g=F/m</p>
+        <dl>
+            <dt>
+            <dd>g = gravity</dd>
+            <dd>m = mass</dd>
+            <dd>F = force</dd>
+            </dt>
+        </dl>
+        <form novalidate>
+        <p>
+            <!-- gravity equation -->
+            <label >
+                <span>Force:</span>
+                <input class="value" id="box1" type="number" oninput="calculate()" />
+                <span class="error" aria-live="polite"></span>
+            </label>
+            <label id = "Mass">
+                <span>Mass:</span>
+                <input class="value" id="box2" type="number" oninput="calculate()" />
+                <span class="error" aria-live="polite"></span>
+            </label>
+            <label class="value" id= "gravity">
+                <span>gravity:</span>
+                <input class="value" id="result" />
+                <span class="error" aria-live="polite"></span>
+            </label>
+        </p>
+        </form>
+        <!-- force equation -->
+    </div>
+    <div class = "box box2">
+        <p>the force that attracts a body towards the centre of the earth, or towards any other physical body having mass.</p>
+    </div>
+</div>
+<div class="wrapper">
+    <div class = "box box1">
+        <p>Gravity is the concept which all things with mass are dawn together </p>
+        <p>F=Gm1m2/r^2</p>
+        <dl>
+            <dt>
+            <dd>F = force</dd>
+            <dd>G = gravitational constant</dd>
+            <dd>M1 = mass 1 </dd>
+            <dd>M2 = mass 2</dd>
+            </dt>
+        </dl>
+        <form novalidate>
+            <p>
+                <!-- gravity equation -->
+                <label >
+                    <span>Mass1:</span>
+                    <input class="value" id="box3" type="number" oninput="calculate2()" />
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                <label >
+                    <span>Mass2:</span>
+                    <input class="value" id="box4" type="number" oninput="calculate2()" />
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                <label class="value" >
+                    <span>Radius:</span>
+                    <input class="value" id="box5" type="number" oninput="calculate2()" />
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                <label >
+                    <span>Force:</span>
+                    <input class="value" id="result2" type="text" />
+                    <span class="error" aria-live="polite"></span>
+                </label>
+            </p>
+        </form>
+        <!-- force equation -->
+    </div>
+    <div class = "box box2">
+        <p>Newton's law of universal gravitation states that every particle attracts every other particle in the universe with a force which is directly proportional to the product of their masses and inversely proportional to the square of the distance between their centers.</p>
+    </div>
+</div>
+
+
+</body>
+</html>
